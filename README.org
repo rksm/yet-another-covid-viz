@@ -2,7 +2,7 @@
 
 This uses [[https://github.com/pomber/covid19][pomber/covid19]] as a data source.
 
-It's running at 
+It's running at [[https://robert.kra.hn/stuff/yet-another-covid-viz/][robert.kra.hn/stuff/yet-another-covid-viz]]
 
 ** Purpose
 
