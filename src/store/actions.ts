@@ -26,10 +26,7 @@ export const fetchData: FetchDataActionHandler = async function(_context) {
 
 export type UpdateSelectedCountryHandler = ActionHandler<SetSelectedCountryPayload>;
 export type UpdateSelectedCountryMethod = DataMethod<UpdateSelectedCountryHandler>;
-export const updateSelectedCountry: UpdateSelectedCountryHandler = (
-  ctx,
-  payload: SetSelectedCountryPayload
-) => {
+export const updateSelectedCountry: UpdateSelectedCountryHandler = (ctx, payload) => {
   ctx.commit("setSelectedCountry", payload);
 };
 

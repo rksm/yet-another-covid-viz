@@ -10,5 +10,8 @@ This is a test app to take [[https://vuejs.org/][vue]], [[https://vuex.vuejs.org
 
 Overall this works fairly well but the vuex type support is lacking. In particular it would be *very* desirable if actions and mutations could be typed. [[https://github.com/ktsn/vuex-class][vuex-class]] provides bindings for state and actions but those attributes do not get the actual types defined for the state and actions.
 
-As an example consider 
+As an example consider the [[src/store/actions.ts#L29][updateSelectedCountry action]]. To type it properly (i.e. to get a check for the payload argument wich is what matters when calling the action) we need to manually specialize the =ActionHandler= and =DataMethod= types so that they are parameterized with the type of the payload argument (=SetSelectedCountryPayload=).
 
+Also not that the =ctx.commit= call is "stringly" typed, i.e. not typed at all, what we pass into that isn't checked. We could specialize =ActionContext<Appstate>.commit("setSelectedCountry", ...)= but I haven't done this in that example.
+
+On the other hand, the [[src/components/CountrySelector.ts:16][calling code]] needs an annotation for =UpdateSelectedCountryMethod= as well. So these are at least three places (more if there are more users of the action) that need to be manually typed and kept in sync.
