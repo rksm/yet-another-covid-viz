@@ -1,0 +1,14 @@
+* Yet another COVID-19 visualize
+
+This uses [[https://github.com/pomber/covid19][pomber/covid19]] as a data source.
+
+It's running at 
+
+** Purpose
+
+This is a test app to take [[https://vuejs.org/][vue]], [[https://vuex.vuejs.org/][vuex]], and their [[https://blog.logrocket.com/how-to-write-a-vue-js-app-completely-in-typescript/][TypeScript support]] for a spin.
+
+Overall this works fairly well but the vuex type support is lacking. In particular it would be *very* desirable if actions and mutations could be typed. [[https://github.com/ktsn/vuex-class][vuex-class]] provides bindings for state and actions but those attributes do not get the actual types defined for the state and actions.
+
+As an example consider 
+
